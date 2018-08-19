@@ -27,14 +27,16 @@ $kafanagore = rand(1,3000);
 $ip = $_POST["ip"];
 $port = $_POST["port"];	
 $sunucuip = 'sunucu ip adresin';	
-$baglanti = ssh2_connect('ip adresi', 22);
-ssh2_auth_password($baglanti, 'root', 'sifreniz');
-$stream = ssh2_exec($baglanti, 'iptables -t nat -A PREROUTING -p udp --dport '.$kafanagore.' -j DNAT --to-destination '.$ip.':'.$port.'');
+$ch = curl_init();	
+curl_setopt($ch,CURLOPT_URL,"http://api.ts3.web.tr/api.php?anahtar=hasan&yeni=$kafanagore&host=$ip&port=$port&method=proxy");
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+$output=curl_exec($ch);
+curl_close($ch);
 echo '<div class="alert alert-success">Başarıyla Oluşturuldu '.$sunucuip.':'.$kafanagore.'</div>';	
 }else{
 echo'<div class="alert alert-danger">Lütfen Robot Olmadığınızı Doğrulayın.</div>';
 }
- ?> 
+?>  
           <div class="form-group">
             <label>İP</label>
             <input type="text" name="ip" id="ip" class="form-control" placeholder="İP Adresi" autocapitalize="off">
