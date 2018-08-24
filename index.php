@@ -5,6 +5,8 @@
 * ts3.web.tr
 * Bu Arada Benim Yaptıgım Sistemlerle Gelip Bana Ben Yaptım Demeyin :)
 * hasanatilan.com
+* yargılanıcaksın,eleştirileceksin,alay edilceksin,taklit edilceksin 
+* kimseyi takma hayallerini gerçekleştir acı olmadan kazanç olmaz herkese iyi kodlamalar dilerim :)
 !--->
 
 <!DOCTYPE html>
